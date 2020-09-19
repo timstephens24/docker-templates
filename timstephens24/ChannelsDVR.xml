@@ -19,7 +19,7 @@
   </Description>
   <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
   <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
-  <Repository>timstephens24/channels-dvr_docker</Repository>
+  <Repository>timstephens24/channels-dvr</Repository>
   <Support>https://community.getchannels.com</Support>
   <BindTime>true</BindTime>
   <Privileged>true</Privileged>
