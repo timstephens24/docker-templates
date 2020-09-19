@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container version="2">
+<Containers>
   <Date>2020-09-19</Date>
   <Beta>False</Beta>
   <Category>MediaServer:Video</Category>
@@ -56,4 +56,4 @@
   <WebUI>http://[IP]:[PORT:65002]</WebUI>
   <Banner></Banner>
   <Icon>https://images-na.ssl-images-amazon.com/images/I/41%2BTlF4DjZL._AC_UL600_SR600,600_.png</Icon>
-</Container>
+</Containers>
