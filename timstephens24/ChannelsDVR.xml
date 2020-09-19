@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container version="2">
+<Containers>
   <Date>2020-09-19</Date>
   <Beta>False</Beta>
   <Category>MediaServer:Video</Category>
@@ -56,4 +56,4 @@
   <WebUI>http://[IP]:[PORT:8089]</WebUI>
   <Banner></Banner>
   <Icon>https://getchannels.com/assets/img/avatar-120.png</Icon>
-</Container>
+</Containers>
