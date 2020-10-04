@@ -22,7 +22,7 @@
   <WebUI>http://[IP]:[PORT:8096]/</WebUI>
   <TemplateURL>https://github.com/linuxserver/docker-templates/blob/master/emby.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emby-logo.png</Icon>
-  <ExtraParams>--runtime=nvidia</ExtraParams>
+  <ExtraParams>--runtime=nvidia --device=/dev/dri</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <DonateText>Donate</DonateText>
