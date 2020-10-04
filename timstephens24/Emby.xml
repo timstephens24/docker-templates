@@ -73,7 +73,7 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Media" Target="/mnt/user/data/Media" Default="" Mode="rw" Description="Movies -/movies" Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Media" Target="/mnt/user/data/Media" Default="" Mode="rw" Description="Media - /mnt/user/data/Media" Type="Path" Display="always" Required="false" Mask="false"></Config>
   <Config Name="HTTP" Target="8096" Default="" Mode="tcp" Description="HTTP - Default 8096" Type="Port" Display="always" Required="false" Mask="false">8096</Config>
   <Config Name="HTTPS" Target="8920" Default="" Mode="tcp" Description="HTTPS - Default 8920 (Optional)" Type="Port" Display="always" Required="false" Mask="false">8920</Config>
   <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
