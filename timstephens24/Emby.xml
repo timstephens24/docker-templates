@@ -49,7 +49,6 @@
       <ContainerDir>/mnt/user/data/Media</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-    </Volume>
     <Volume>
       <HostDir></HostDir>
       <ContainerDir>/config</ContainerDir>
