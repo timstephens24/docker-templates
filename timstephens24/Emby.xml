@@ -54,6 +54,11 @@
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+    <Volume>
+        <HostDir>/mnt/user/appdata/transcode</HostDir>
+      <ContainerDir>/transcode</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
   </Data>
   <Environment>
     <Variable>
@@ -78,6 +83,7 @@
   <Config Name="HTTPS" Target="8920" Default="" Mode="tcp" Description="HTTPS - Default 8920 (Optional)" Type="Port" Display="always" Required="false" Mask="false">8920</Config>
   <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="AppData Config Path" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"></Config>
+  <Config Name="Transcode" Target="/transcode" Default="" Mode="rw" Description="Path for transcoding folder (Optional)" Type="Path" Display="always" Required="false" Mask="false"/>
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
 </Container>
