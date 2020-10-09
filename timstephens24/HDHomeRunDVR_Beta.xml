@@ -15,7 +15,7 @@
     [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
     [b]/hdhomerun[/b] This is where the DVR will save it's recordings.[br]
     [b][u][span style='color: #E80000;']Documentation[/span][/u][/b][br]
-      https://github.com/timstephens24/HDHomeRunDVR-Stable[br][br]
+      https://github.com/timstephens24/HDHomeRunDVR-Beta[br][br]
   </Description>
   <Registry>https://registry.hub.docker.com/r/timstephens24/hdhomerun_dvr</Registry>
   <GitHub>https://github.com/timstephens24/HDHomeRunDVR-Beta</GitHub>
