@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Pluto for ChannelsDVR</Name>
+  <Repository>jonmaddox/pluto-for-channels</Repository>
+  <Registry>https://hub.docker.com/r/jonmaddox/pluto-for-channels/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://community.getchannels.com/</Support>
+  <Project>https://getchannels.com/</Project>
+  <Overview>This simple Docker image will generate an M3U playlist and EPG optimized for use in Channels and expose them over HTTP. Channels supports custom channels by utilizing streaming sources via M3U playlists. Channels allows for additional extended metadata tags in M3U playlists that allow you to give it extra information and art to make the experience better. This project adds those extra tags to make things look great in Channels.</Overview>
+  <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/timstephens24/docker-templates/master/timstephens24/Pluto_for_ChannelsDVR.xml</TemplateURL>
+  <PostArgs/>
+  <CPUset/>
+  <Description>This simple Docker image will generate an M3U playlist and EPG optimized for use in Channels and expose them over HTTP.</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8085</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  </Environment>
+  <Labels/>
+</Container>

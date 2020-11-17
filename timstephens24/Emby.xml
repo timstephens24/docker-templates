@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>emby</Name>
-  <Repository>linuxserver/emby</Repository>
+  <Repository>linuxserver/emby:latest</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/emby/</Registry>
   <Branch>
   <Tag>latest</Tag>
@@ -20,7 +20,7 @@
   <Overview>Your Media, Your Way [br][br]Emby brings together your personal videos, music, photos, and live television.[br][br][b][u][span style='color: #E80000;']Nvidia GPU Use[/span][/u][/b][br]Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and[br] add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and[br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b][br][br][b][u][span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot, then [br]add [b]--device=/dev/dri[/b] to [b]"extra parameters"[/b] (switch on advanced view)</Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
   <WebUI>http://[IP]:[PORT:8096]/</WebUI>
-  <TemplateURL>https://github.com/linuxserver/docker-templates/blob/master/emby.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/timstephens24/docker-templates/master/timstephens24/Emby.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emby-logo.png</Icon>
   <ExtraParams>--runtime=nvidia --device=/dev/dri</ExtraParams>
   <PostArgs/>
