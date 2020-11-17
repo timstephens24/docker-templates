@@ -26,6 +26,5 @@
       </Port>
     </Publish>
   </Networking>
-  </Environment>
   <Labels/>
 </Container>
