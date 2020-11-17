@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Pluto for ChannelsDVR</Name>
+  <Name>pluto</Name>
   <Repository>jonmaddox/pluto-for-channels</Repository>
   <Registry>https://hub.docker.com/r/jonmaddox/pluto-for-channels/</Registry>
   <Network>host</Network>
