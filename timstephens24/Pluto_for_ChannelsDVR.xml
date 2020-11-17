@@ -6,7 +6,7 @@
   <Network>host</Network>
   <MyIP/>
   <Shell>bash</Shell>
-  <Privileged>false</Privileged>
+  <Privileged>true</Privileged>
   <Support>https://community.getchannels.com/</Support>
   <Project>https://getchannels.com/</Project>
   <Overview>This simple Docker image will generate an M3U playlist and EPG optimized for use in Channels and expose them over HTTP. Channels supports custom channels by utilizing streaming sources via M3U playlists. Channels allows for additional extended metadata tags in M3U playlists that allow you to give it extra information and art to make the experience better. This project adds those extra tags to make things look great in Channels.</Overview>
