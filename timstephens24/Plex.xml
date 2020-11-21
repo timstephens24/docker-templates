@@ -94,6 +94,9 @@
       <Mode/>
     </Variable>
     <Variable>
+      <Value>latest</Value>
+      <Name>VERSION</Name>
+    <Variable>
       <Value>compute,utility,video</Value>
       <Name>NVIDIA_DRIVER_CAPABILITIES</Name>
       <Mode/>
