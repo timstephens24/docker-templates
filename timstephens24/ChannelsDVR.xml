@@ -1,44 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <Date>2020-09-19</Date>
-  <Beta>False</Beta>
-  <Category>MediaServer:Video</Category>
+<Container version="2">
   <Name>Channels DVR</Name>
-  <Project>https://getchannels.com/dvr</Project>
-  <Changes></Changes>
+  <Date>2020-11-21</Date>
   <Overview>
-    Channels DVR
-  </Overview>
-  <Description>
     The Channels DVR backend engine.[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     Click the [b]Apply[/b] button at the bottom of the page.[br]
-    There is no need to change the host mappings from their default values.[br][br]
+    Here is an explanation of the default host mappings:[br]
     [b]/mnt/user/data/Media[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /mnt/user/data/Media/ChannelsDVR[br]
     [b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr[br][br]
-  </Description>
-  <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
-  <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
+    If you have an Intel Integrated Graphics card and i915 kernel header enabled, you could add [b]--device=/dev/dri[/b] in [b]"extra parameters"[/b] (switch on advanced view).[br]
+    If you have an NVIDIA card installed with a plugin with the Nvidia Drivers installed, recommend you use the [b]ChannelsDVR_NVIDIA.xml[/b] template. You could add [b]--runtime=nvidia[/b] in [b]"extra parameters"[/b] (switch on advanced view). You would then need to add Environmental Variable for [b]NVIDIA_VISIBLE_DEVICES[/b] and set that to [b]all[/b] as well as the Environmental Variabe for NVIDIA_DRIVER_CAPABILITIES and set that to [b]compute,utility,video[/b]
+  </Overview>
   <Repository>timstephens24/channels-dvr</Repository>
-  <Support>https://community.getchannels.com</Support>
-  <BindTime>true</BindTime>
+  <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
+  <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
+  <Icon>https://getchannels.com/assets/img/avatar-120.png</Icon>
+  <WebUI>http://[IP]:[PORT:8089]</WebUI>
+  <ExtraParams></ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
   <Privileged>true</Privileged>
+  <Beta>False</Beta>
+  <Category>MediaServer:Video</Category>
+  <Changes></Changes>
+  <Support>https://community.getchannels.com</Support>
+  <Project>https://getchannels.com/dvr</Project>
+  <BindTime>true</BindTime>
   <Networking>
     <Mode>host</Mode>
-    <Publish/>
+      <Publish>
+        <Port>
+          <HostPort>8089</HostPort>
+          <ContainerPort>8089</ContainerPort>
+          <Protocol>tcp</Protocol>
+        </Port>
+      </Publish>
   </Networking>
   <Environment>
     <Variable>
       <Name>PUID</Name>
       <Value>99</Value>
+      <Mode/>
     </Variable>
     <Variable>
       <Name>PGID</Name>
       <Value>100</Value>
+      <Mode/>
     </Variable>
     <Variable>
-      <Name>TZ</Name>
       <Value>America/New_York</Value>
+      <Name>TZ</Name>
+      <Mode/>
     </Variable>
   </Environment>
   <Data>
@@ -53,7 +69,12 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:8089]</WebUI>
+  <Labels/>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
+  <Config Name="DVR" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="DVR Folder" Type="Path" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Appdata" Target="/channels-dvr" Default="/mnt/user/appdata/channels-dvr" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
   <Banner></Banner>
-  <Icon>https://getchannels.com/assets/img/avatar-120.png</Icon>
-</Containers>
+</Container>
