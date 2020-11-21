@@ -87,8 +87,8 @@
   <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
   <Config Name="NVIDIA_DRIVER_CAPABILITIES" Target="NVIDIA_DRIVER_CAPABILITIES" Default="compute,utility,video" Mode="" Description="Container Variable: NVIDIA_DRIVER_CAPABILITIES" Type="Variable" Display="advanced" Required="true" Mask="false">compute,utility,video</Config>
   <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="NVIDIA_VISIBLE_DEVICES" Mode="" Description="Container Variable: NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="advanced" Required="true" Mask="false">all</Config>
-  <Config Name="/mnt/user/data/Media" Target="/mnt/user/data/Media" Default="" Mode="rw" Description="DVR Folder" Type="Path" Display="advanced" Required="true" Mask="false"/>
-  <Config Name="/channels-dvr" Target="/mnt/user/appdata/channels-dvr" Default="" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="DVR" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="DVR Folder" Type="Path" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Appdata" Target="/mnt/user/appdata/channels-dvr" Default="/channels-dvr" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
   <Banner></Banner>
 </Container>
