@@ -1,30 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <Date>2020-09-19</Date>
-  <Beta>False</Beta>
-  <Category>MediaServer:Video</Category>
+<Container version="2">
   <Name>Channels DVR</Name>
-  <Project>https://getchannels.com/dvr</Project>
-  <Changes></Changes>
+  <Date>2020-11-21</Date>
   <Overview>
-    Channels DVR
+      Channels DVR
   </Overview>
   <Description>
-    The Channels DVR backend engine.[br][br]
-    [b][span style='color: #E80000;']Directions:[/span][/b][br]
-    Click the [b]Apply[/b] button at the bottom of the page.[br]
-    There is no need to change the host mappings from their default values.[br][br]
-    [b]/mnt/user/data/Media[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /mnt/user/data/Media/ChannelsDVR[br]
-    [b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr[br][br]
-    [br]You need to have an NVIDIA card installed with a plugin with the Nvidia Drivers installed.[br] If you don't want to use NVIDIA remove the [b]--runtime=nvidia[/b] in [b]"extra parameters"[/b] (switch on advanced view). If you want to specify a NVIDIA card, [br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b] for the card you want to use (replace [b]all[/b] with the [b]GPU UUID[/b]
+        The Channels DVR backend engine.[br][br]
+        [b][span style='color: #E80000;']Directions:[/span][/b][br]
+        Click the [b]Apply[/b] button at the bottom of the page.[br]
+        There is no need to change the host mappings from their default values.[br][br]
+        [b]/mnt/user/data/Media[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /mnt/user/data/Media/ChannelsDVR[br]
+        [b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr[br][br]
+        [br]You need to have an NVIDIA card installed with a plugin with the Nvidia Drivers installed.[br] If you don't want to use NVIDIA remove the [b]--runtime=nvidia[/b] in [b]"extra parameters"[/b] (switch on advanced view). If you want to specify a NVIDIA card, [br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b] for the card you want to use (replace [b]all[/b] with the [b]GPU UUID[/b]
   </Description>
-  <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
-  <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
   <Repository>timstephens24/channels-dvr</Repository>
-  <Support>https://community.getchannels.com</Support>
-  <BindTime>true</BindTime>
-  <Privileged>true</Privileged>
+  <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
+  <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
+  <Icon>https://getchannels.com/assets/img/avatar-120.png</Icon>
+  <WebUI>http://[IP]:[PORT:8089]</WebUI>
   <ExtraParams>--runtime=nvidia</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Beta>False</Beta>
+  <Category>MediaServer:Video</Category>
+  <Changes></Changes>
+  <Support>https://community.getchannels.com</Support>
+  <Project>https://getchannels.com/dvr</Project>
+  <BindTime>true</BindTime>
   <Networking>
     <Mode>host</Mode>
       <Publish>
@@ -39,10 +46,12 @@
     <Variable>
       <Name>PUID</Name>
       <Value>99</Value>
+      <Mode/>
     </Variable>
     <Variable>
       <Name>PGID</Name>
       <Value>100</Value>
+      <Mode/>
     </Variable>
     <Variable>
       <Value>America/New_York</Value>
@@ -72,7 +81,14 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:8089]</WebUI>
+  <Labels/>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
+  <Config Name="NVIDIA_DRIVER_CAPABILITIES" Target="NVIDIA_DRIVER_CAPABILITIES" Default="compute,utility,video" Mode="" Description="Container Variable: NVIDIA_DRIVER_CAPABILITIES" Type="Variable" Display="advanced" Required="true" Mask="false">compute,utility,video</Config>
+  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="NVIDIA_VISIBLE_DEVICES" Mode="" Description="Container Variable: NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="advanced" Required="true" Mask="false">all</Config>
+  <Config Name="/mnt/user/data/Media" Target="/mnt/user/data/Media" Default="" Mode="rw" Description="DVR Folder" Type="Path" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="/channels-dvr" Target="/mnt/user/appdata/channels-dvr" Default="" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
   <Banner></Banner>
-  <Icon>https://getchannels.com/assets/img/avatar-120.png</Icon>
 </Containers>
