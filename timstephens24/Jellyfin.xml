@@ -55,7 +55,7 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-        <HostDir>/mnt/user/appdata/transcode</HostDir>
+      <HostDir>/mnt/user/appdata/transcode</HostDir>
       <ContainerDir>/transcode</ContainerDir>
       <Mode>rw</Mode>
     </Volume>

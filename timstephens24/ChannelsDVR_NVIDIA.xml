@@ -16,6 +16,7 @@
     There is no need to change the host mappings from their default values.[br][br]
     [b]/mnt/user/data/Media[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /mnt/user/data/Media/ChannelsDVR[br]
     [b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr[br][br]
+    [br]Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and[br] add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and[br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b]
   </Description>
   <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
   <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
@@ -23,9 +24,16 @@
   <Support>https://community.getchannels.com</Support>
   <BindTime>true</BindTime>
   <Privileged>true</Privileged>
+  <ExtraParams>--runtime=nvidia --device=/dev/dri</ExtraParams>
   <Networking>
     <Mode>host</Mode>
-    <Publish/>
+      <Publish>
+        <Port>
+          <HostPort>8089</HostPort>
+          <ContainerPort>8089</ContainerPort>
+          <Protocol>tcp</Protocol>
+        </Port>
+      </Publish>
   </Networking>
   <Environment>
     <Variable>
@@ -37,16 +45,19 @@
       <Value>100</Value>
     </Variable>
     <Variable>
-      <Name>TZ</Name>
       <Value>America/New_York</Value>
+      <Name>TZ</Name>
+      <Mode/>
     </Variable>
     <Variable>
-      <Name>NVIDIA_DRIVER_CAPABILITIES</Name>
       <Value>compute,utility,video</Value>
+      <Name>NVIDIA_DRIVER_CAPABILITIES</Name>
+      <Mode/>
     </Variable>
     <Variable>
-      <Name>NVIDIA_VISIBLE_DEVICES</Name>
       <Value>all</Value>
+      <Name>NVIDIA_VISIBLE_DEVICES</Name>
+      <Mode/>
     </Variable>
   </Environment>
   <Data>
