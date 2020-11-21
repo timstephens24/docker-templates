@@ -3,9 +3,6 @@
   <Name>Channels DVR</Name>
   <Date>2020-11-21</Date>
   <Overview>
-      Channels DVR
-  </Overview>
-  <Description>
         The Channels DVR backend engine.[br][br]
         [b][span style='color: #E80000;']Directions:[/span][/b][br]
         Click the [b]Apply[/b] button at the bottom of the page.[br]
@@ -13,7 +10,7 @@
         [b]/mnt/user/data/Media[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /mnt/user/data/Media/ChannelsDVR[br]
         [b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr[br][br]
         [br]You need to have an NVIDIA card installed with a plugin with the Nvidia Drivers installed.[br] If you don't want to use NVIDIA remove the [b]--runtime=nvidia[/b] in [b]"extra parameters"[/b] (switch on advanced view). If you want to specify a NVIDIA card, [br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b] for the card you want to use (replace [b]all[/b] with the [b]GPU UUID[/b]
-  </Description>
+  </Overview>
   <Repository>timstephens24/channels-dvr</Repository>
   <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
   <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
