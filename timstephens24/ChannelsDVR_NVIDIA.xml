@@ -91,4 +91,4 @@
   <Config Name="/channels-dvr" Target="/mnt/user/appdata/channels-dvr" Default="" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
   <Banner></Banner>
-</Containers>
+</Container>
