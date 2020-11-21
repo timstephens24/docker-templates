@@ -7,7 +7,7 @@
     Here is an explanation of the default host mappings:[br]
     [b]/mnt/user/data/Media[/b] : This is where the Media folder exists for Movies, TV Shows, Music, etc. You would then have your libraries pointed here, like /mnt/user/data/media/Movies[br]
     [b]/mnt/user/appdata/plex[/b] : This is where Plex stores all of the files for the library and plugins. This points to /config in the docker container.[br]
-    [br]You need to have an NVIDIA card installed with a plugin with the Nvidia Drivers installed.[br] If you don't want to use NVIDIA remove the [b]--runtime=nvidia[/b] in [b]"extra parameters"[/b] (switch on advanced view). If you want to specify a NVIDIA card, [br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b] for the card you want to use (replace [b]all[/b] with the [b]GPU UUID[/b]
+    [br]You need to have an NVIDIA card installed with a plugin with the Nvidia Drivers installed.[br] If you don't want to use NVIDIA remove the [b]--runtime=nvidia[/b] in [b]"extra parameters"[/b] (switch on advanced view). If you want to specify a NVIDIA card, [br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b] for the card you want to use (replace [b]all[/b] with the [b]GPU UUID[/b])
   </Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
   <Repository>linuxserver/plex</Repository>
