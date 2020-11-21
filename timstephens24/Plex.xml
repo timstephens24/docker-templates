@@ -96,6 +96,7 @@
     <Variable>
       <Value>latest</Value>
       <Name>VERSION</Name>
+      <Mode/>
     </Variable>
     <Variable>
       <Value>compute,utility,video</Value>
