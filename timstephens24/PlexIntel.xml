@@ -7,7 +7,7 @@
     Here is an explanation of the default host mappings:[br]
     [b]/mnt/user/data/Media[/b] : This is where the Media folder exists for Movies, TV Shows, Music, etc. You would then have your libraries pointed here, like /mnt/user/data/media/Movies[br]
     [b]/mnt/user/appdata/plex[/b] : This is where Plex stores all of the files for the library and plugins. This points to /config in the docker container.[br]
-    [br]You need to have an NVIDIA card installed with a plugin with the Nvidia Drivers installed.[br] If you don't want to use NVIDIA remove the [b]--runtime=nvidia[/b] in [b]"extra parameters"[/b] (switch on advanced view). If you want to specify a NVIDIA card, [br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b] for the card you want to use (replace [b]all[/b] with the [b]GPU UUID[/b])
+    [span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot.
   </Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
   <Repository>ghcr.io/linuxserver/plex</Repository>
@@ -98,16 +98,6 @@
       <Name>VERSION</Name>
       <Mode/>
     </Variable>
-    <Variable>
-      <Value>compute,utility,video</Value>
-      <Name>NVIDIA_DRIVER_CAPABILITIES</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>all</Value>
-      <Name>NVIDIA_VISIBLE_DEVICES</Name>
-      <Mode/>
-    </Variable>
   </Environment>
   <Data>
     <Volume>
@@ -131,8 +121,6 @@
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
   <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
   <Config Name="VERSION" Target="VERSION" Default="latest" Mode="" Description="Container Variable: latest" Type="Variable" Display="advanced" Required="false" Mask="false">latest</Config>
-  <Config Name="NVIDIA_DRIVER_CAPABILITIES" Target="NVIDIA_DRIVER_CAPABILITIES" Default="compute,utility,video" Mode="" Description="Container Variable: NVIDIA_DRIVER_CAPABILITIES" Type="Variable" Display="advanced" Required="true" Mask="false">compute,utility,video</Config>
-  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="NVIDIA_VISIBLE_DEVICES" Mode="" Description="Container Variable: NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="advanced" Required="true" Mask="false">all</Config>
   <Config Name="Media" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="Media Folder" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Transcode" Target="/transcode" Default="/mnt/user/appdata/transcode" Mode="rw" Description="Transcode" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/plex" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
