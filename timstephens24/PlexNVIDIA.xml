@@ -14,7 +14,7 @@
   <Registry>https://hub.docker.com/r/linuxserver/plex/</Registry>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/plex-icon.png</Icon>
   <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
-  <ExtraParams>--device=/dev/dri</ExtraParams>
+  <ExtraParams>--runtime=nvidia</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <Network>host</Network>
