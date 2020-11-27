@@ -17,7 +17,19 @@
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/80744-support-linuxserverio-jellyfin/</Support>
   <Project>https://github.com/jellyfin/jellyfin#jellyfin</Project>
-  <Overview>Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.[br][br][b][u][span style='color: #E80000;']Nvidia GPU Use[/span][/u][/b][br]Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and[br] add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and[br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b][br][br][b][u][span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot, then [br]add [b]--device=/dev/dri[/b] to [b]"extra parameters"[/b] (switch on advanced view)</Overview>
+  <Overview>
+    Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.[br]
+    Here is an explanation of the default host mappings:[br]
+    [b]/mnt/user/data/Media[/b] : This is where the Media folder exists for Movies, TV Shows, Music, etc. You would then have your libraries pointed here, like /mnt/user/data/media/Movies[br]
+    [b]/mnt/user/appdata/jellyfin[/b] : This is where Jellyfin stores all of the files for the library and plugins. This points to /config in the docker container.[br]
+    [b]/mnt/user/appdata/transcode[/b] : This is where Jellyfin will transcode to. This points to /transcode in the docker container.[br]
+    [span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot.[br]
+    Alternately on the newest Unraid (6.9.0-beta35 or higher) you can run the following two commands:[br]
+    [b]mkdir /boot/config/modprobe.d[/b][br]
+    [b]touch /boot/config/modprobe.d/i915.conf[/b][br][br]
+    [span style='color: #E80000;']NVIDIA GPU Use[/span][/u][/b][br]
+    Using the Unraid Nvidia Plugin (or the NVIDIA-Drive plugin on Unraid 6.9.0-beta35 or higher) to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b] (or just us leave it set to 'all').
+  </Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
   <WebUI>http://[IP]:[PORT:8097]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/timstephens24/docker-templates/master/timstephens24/Jellyfin.xml</TemplateURL>
@@ -45,7 +57,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir/>
+      <HostDir>/mnt/user/data/Media</HostDir>
       <ContainerDir>/mnt/user/data/Media</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -62,7 +74,7 @@
   </Data>
   <Environment>
     <Variable>
-      <Value/>
+      <Value>all</Value>
       <Name>NVIDIA_VISIBLE_DEVICES</Name>
       <Mode/>
     </Variable>
@@ -78,11 +90,11 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Media" Target="/mnt/user/data/Media" Default="" Mode="rw" Description="Media - /mnt/user/data/Media" Type="Path" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="HTTP" Target="8097" Default="" Mode="tcp" Description="HTTP - Default 8097" Type="Port" Display="always" Required="false" Mask="false">8097</Config>
-  <Config Name="HTTPS" Target="8921" Default="" Mode="tcp" Description="HTTPS - Default 8921 (Optional)" Type="Port" Display="always" Required="false" Mask="false">8921</Config>
-  <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="AppData Config Path" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"></Config>
+  <Config Name="Media" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="Media - /mnt/user/data/Media" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="HTTP" Target="8097" Default="" Mode="tcp" Description="For access to the Jellyfin WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">8097</Config>
+  <Config Name="HTTPS" Target="8921" Default="" Mode="tcp" Description="For access to the Jellyfin WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">8921</Config>
+  <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/jellyfin" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
   <Config Name="Transcode" Target="/transcode" Default="" Mode="rw" Description="Path for transcoding folder (Optional)" Type="Path" Display="always" Required="false" Mask="false"/>
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>

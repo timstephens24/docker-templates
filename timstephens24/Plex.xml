@@ -7,12 +7,13 @@
     Here is an explanation of the default host mappings:[br]
     [b]/mnt/user/data/Media[/b] : This is where the Media folder exists for Movies, TV Shows, Music, etc. You would then have your libraries pointed here, like /mnt/user/data/media/Movies[br]
     [b]/mnt/user/appdata/plex[/b] : This is where Plex stores all of the files for the library and plugins. This points to /config in the docker container.[br]
+    [b]/mnt/user/appdata/transcode[/b] : This is where Jellyfin will transcode to. This points to /transcode in the docker container.[br]
     [span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot.[br]
     Alternately on the newest Unraid (6.9.0-beta35 or higher) you can run the following two commands:[br]
     [b]mkdir /boot/config/modprobe.d[/b][br]
     [b]touch /boot/config/modprobe.d/i915.conf[/b][br][br]
     [span style='color: #E80000;']NVIDIA GPU Use[/span][/u][/b][br]
-    Using the Unraid Nvidia Plugin (or the NVIDIA-Drive plugin on Unraid 6.9.0-beta35 or higher) to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b] (or just us leave it set to 'all').[br][br]
+    Using the Unraid Nvidia Plugin (or the NVIDIA-Drive plugin on Unraid 6.9.0-beta35 or higher) to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b] (or just us leave it set to 'all').
   </Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
   <Repository>ghcr.io/linuxserver/plex</Repository>
@@ -94,7 +95,7 @@
   <Config Name="Media" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="Media Folder" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Transcode" Target="/transcode" Default="/mnt/user/appdata/transcode" Mode="rw" Description="Transcode" Type="Path" Display="always" Required="true" Mask="false">
   <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/plex" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="NVIDIA_VISIBLE_DEVICES" Mode="" Description="Container Variable: NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="advanced" Required="true" Mask="false">all</Config>
+  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="NVIDIA_VISIBLE_DEVICES" Mode="" Description="Container Variable: NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="advanced" Required="false" Mask="false">all</Config>
   <Config Name="WebUI" Target="32400" Default="32400" Mode="tcp" Description="For access to the Plex Media Server WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32400</Config>
   <Banner></Banner>
 </Container>
