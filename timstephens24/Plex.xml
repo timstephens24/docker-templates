@@ -93,7 +93,7 @@
   <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="VERSION" Target="VERSION" Default="latest" Mode="" Description="Container Variable: latest" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="Media" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="Media Folder" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="Transcode" Target="/transcode" Default="/mnt/user/appdata/transcode" Mode="rw" Description="Transcode" Type="Path" Display="always" Required="true" Mask="false">
+  <Config Name="Transcode" Target="/transcode" Default="/mnt/user/appdata/transcode" Mode="rw" Description="Transcode" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/plex" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Container Variable: NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="WebUI" Target="32400" Default="32400" Mode="tcp" Description="For access to the Plex Media Server WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
