@@ -96,8 +96,8 @@
   </Environment>
   <Labels/>
   <Config Name="Media" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="Media - /mnt/user/data/Media" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="HTTP" Target="8096" Default="" Mode="tcp" Description="For access to the Emby WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
-  <Config Name="HTTPS" Target="8920" Default="" Mode="tcp" Description="For access to the Emby WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="HTTP" Target="8096" Default="8096" Mode="tcp" Description="For access to the Emby WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="HTTPS" Target="8920" Default="8920" Mode="tcp" Description="For access to the Emby WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
   <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/emby" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
   <Config Name="Transcode" Target="/transcode" Default="/mnt/user/apptdata/transcode" Mode="rw" Description="Path for transcoding folder (Optional)" Type="Path" Display="always" Required="false" Mask="false"/>
