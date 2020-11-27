@@ -28,7 +28,7 @@
     [b]mkdir /boot/config/modprobe.d[/b][br]
     [b]touch /boot/config/modprobe.d/i915.conf[/b][br][br]
     [span style='color: #E80000;']NVIDIA GPU Use[/span][/u][/b][br]
-    Using the Unraid Nvidia Plugin (or the NVIDIA-Drive plugin on Unraid 6.9.0-beta35 or higher) to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b] (or just us leave it set to 'all').
+    Using the Unraid Nvidia Plugin (or the NVIDIA-Driver plugin on Unraid 6.9.0-beta35 or higher) to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b] (or just us leave it set to 'all').
   </Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
   <WebUI>http://[IP]:[PORT:8097]/</WebUI>
@@ -88,14 +88,20 @@
       <Name>PGID</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value>America/New_York</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Labels/>
   <Config Name="Media" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="Media - /mnt/user/data/Media" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="HTTP" Target="8097" Default="" Mode="tcp" Description="For access to the Jellyfin WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">8097</Config>
-  <Config Name="HTTPS" Target="8921" Default="" Mode="tcp" Description="For access to the Jellyfin WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">8921</Config>
+  <Config Name="HTTP" Target="8097" Default="8097" Mode="tcp" Description="For access to the Jellyfin WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="HTTPS" Target="8921" Default="8097" Mode="tcp" Description="For access to the Jellyfin WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
   <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/jellyfin" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
-  <Config Name="Transcode" Target="/transcode" Default="" Mode="rw" Description="Path for transcoding folder (Optional)" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
-  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/jellyfin" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Transcode" Target="/transcode" Default="/mnt/user/appdata/transcode" Mode="rw" Description="Path for transcoding folder (Optional)" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="false" Mask="false"/>
 </Container>
