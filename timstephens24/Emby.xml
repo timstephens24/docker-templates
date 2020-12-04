@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>emby</Name>
-  <Repository>linuxserver/emby:latest</Repository>
-  <Registry>https://hub.docker.com/r/linuxserver/emby/</Registry>
+  <Repository>timstephens24/emby:latest</Repository>
+  <Registry>https://hub.docker.com/r/timstephens24/emby/</Registry>
   <Branch>
   <Tag>latest</Tag>
   <TagDescription>Latest stable release of Emby</TagDescription>
@@ -15,7 +15,6 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://forums.unraid.net/topic/80745-support-linuxserverio-emby/</Support>
   <Project>https://emby.media/</Project>
   <Overview>
     Your Media, Your Way. Emby brings together your personal videos, music, photos, and live television.[br]
@@ -33,12 +32,10 @@
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
   <WebUI>http://[IP]:[PORT:8096]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/timstephens24/docker-templates/master/timstephens24/Emby.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emby-logo.png</Icon>
+  <Icon>https://raw.githubusercontent.com/timstephens24/docker-templates/master/timstephens24/img/emby-logo.png</Icon>
   <ExtraParams>--runtime=nvidia --device=/dev/dri</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DonateText>Donate</DonateText>
-  <DonateLink>https://www.linuxserver.io/donate</DonateLink>
   <Description>Your Media, Your Way. Emby brings together your personal videos, music, photos, and live television.</Description>
   <Networking>
     <Mode>host</Mode>

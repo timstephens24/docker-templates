@@ -16,9 +16,9 @@
     Using the Unraid Nvidia Plugin (or the NVIDIA-Driver plugin on Unraid 6.9.0-beta35 or higher) to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b] (or just us leave it set to 'all').
   </Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
-  <Repository>ghcr.io/linuxserver/plex</Repository>
-  <Registry>https://hub.docker.com/r/linuxserver/plex/</Registry>
-  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/plex-icon.png</Icon>
+  <Repository>timstephens24/plex</Repository>
+  <Registry>https://hub.docker.com/r/timstephens24/plex/</Registry>
+  <Icon>https://raw.githubusercontent.com/timstephens24/docker-templates/master/timstephens24/img/plex-icon.png</Icon>
   <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
   <ExtraParams>--runtime=nvidia --device=/dev/dri</ExtraParams>
   <PostArgs/>
@@ -29,10 +29,7 @@
   <Privileged>false</Privileged>
   <Beta>False</Beta>
   <Changes></Changes>
-  <Support>https://forums.unraid.net/topic/40463-support-linuxserverio-plex-media-server/</Support>
   <Project>https://www.plex.tv/</Project>
-  <DonateText>Donate</DonateText>
-  <DonateLink>https://www.linuxserver.io/donate</DonateLink>
   <Networking>
     <Mode>host</Mode>
     <Publish>

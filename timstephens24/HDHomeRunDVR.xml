@@ -19,7 +19,7 @@
   </Description>
   <Registry>https://registry.hub.docker.com/r/timstephens24/hdhomerun_dvr</Registry>
   <GitHub>https://github.com/timstephens24/HDHomeRunDVR-Stable</GitHub>
-  <Repository>timstephens24/hdhomerun_dvr</Repository>
+  <Repository>timstephens24/hdhomerun_dvr:latest</Repository>
   <Support>https://www.silicondust.com/support</Support>
   <BindTime>true</BindTime>
   <Privileged>true</Privileged>
