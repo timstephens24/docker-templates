@@ -13,14 +13,14 @@
   <Privileged>true</Privileged>
   <Project>https://github.com/jellyfin/jellyfin#jellyfin</Project>
   <Overview>
-    Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.[br]
-    Here is an explanation of the default host mappings:[br]
+    Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.[br][br]
+    [span style='color: #E80000;']Host Mappings Explanation[/span][br]
     [b]Port 8097[/b] : This is to not conflict with Emby. It is pointed to 8096 in the container (No effect in host mode - reference only).[br]
     [b]Port 8921[/b] : This is to not conflict with Emby. It is pointed to 8920 in the container (No effect in host mode - reference only).[br]
     [b]/mnt/user/data/Media[/b] : This is where the Media folder exists for Movies, TV Shows, Music, etc. You would then have your libraries pointed here, like /mnt/user/data/media/Movies[br]
     [b]/mnt/user/appdata/jellyfin[/b] : This is where Jellyfin stores all of the files for the library and plugins. This points to /config in the docker container.[br]
-    [b]/mnt/user/appdata/transcode[/b] : This is where Jellyfin will transcode to. This points to /transcode in the docker container.[br]
-    [span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot.[br]
+    [b]/mnt/user/appdata/transcode[/b] : This is where Jellyfin will transcode to. This points to /transcode in the docker container.[br][br]
+    [span style='color: #E80000;']Intel GPU Use[/span][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot.[br]
     Alternately on the newest Unraid (6.9.0-beta35 or higher) you can run the following two commands:[br]
     [b]mkdir /boot/config/modprobe.d[/b][br]
     [b]touch /boot/config/modprobe.d/i915.conf[/b][br][br]
