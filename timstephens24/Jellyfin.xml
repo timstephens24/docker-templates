@@ -7,7 +7,6 @@
   <Tag>latest</Tag>
   <TagDescription>Latest stable release of Jellyfin</TagDescription>
   </Branch>
-  <Branch>
   <Network>host</Network>
   <MyIP/>
   <Shell>bash</Shell>
