@@ -16,14 +16,13 @@
   <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
   <Icon>https://getchannels.com/assets/img/avatar-120.png</Icon>
   <WebUI>http://[IP]:[PORT:8089]</WebUI>
-  <ExtraParams>--runtime=nvidia</ExtraParams>
+  <ExtraParams>--runtime=nvidia --security-opt seccomp=unconfined</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <Network>host</Network>
   <MyIP/>
   <Shell>sh</Shell>
-  <Privileged>true</Privileged>
-  <Beta>False</Beta>
+  <Privileged>false</Privileged>
   <Category>MediaServer:Video</Category>
   <Changes></Changes>
   <Support>https://community.getchannels.com</Support>
