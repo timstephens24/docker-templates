@@ -8,17 +8,16 @@
   <TagDescription>Latest stable release of Jellyfin</TagDescription>
   </Branch>
   <Branch>
-  <Tag>beta</Tag>
-  <TagDescription>Latest nightly release of Jellyfin</TagDescription>
-  </Branch>
   <Network>host</Network>
   <MyIP/>
   <Shell>bash</Shell>
-  <Privileged>false</Privileged>
+  <Privileged>true</Privileged>
   <Project>https://github.com/jellyfin/jellyfin#jellyfin</Project>
   <Overview>
     Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.[br]
     Here is an explanation of the default host mappings:[br]
+    [b]Port 8097[/b] : This is to not conflict with Emby. It is pointed to 8096 in the container.[br]
+    [b]Port 8921[/b] : This is to not conflict with Emby. It is pointed to 8920 in the container.[br]
     [b]/mnt/user/data/Media[/b] : This is where the Media folder exists for Movies, TV Shows, Music, etc. You would then have your libraries pointed here, like /mnt/user/data/media/Movies[br]
     [b]/mnt/user/appdata/jellyfin[/b] : This is where Jellyfin stores all of the files for the library and plugins. This points to /config in the docker container.[br]
     [b]/mnt/user/appdata/transcode[/b] : This is where Jellyfin will transcode to. This points to /transcode in the docker container.[br]
@@ -42,12 +41,12 @@
     <Publish>
       <Port>
         <HostPort>8097</HostPort>
-        <ContainerPort>8097</ContainerPort>
+        <ContainerPort>8096</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
         <HostPort>8921</HostPort>
-        <ContainerPort>8921</ContainerPort>
+        <ContainerPort>8920</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
