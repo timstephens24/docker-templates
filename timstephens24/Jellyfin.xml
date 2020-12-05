@@ -92,7 +92,7 @@
   <Labels/>
   <Config Name="Media" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="Media - /mnt/user/data/Media" Type="Path" Display="always" Required="false" Mask="false"/>
   <Config Name="HTTP" Target="8097" Default="8097" Mode="tcp" Description="For access to the Jellyfin WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
-  <Config Name="HTTPS" Target="8921" Default="8097" Mode="tcp" Description="For access to the Jellyfin WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="HTTPS" Target="8921" Default="8291" Mode="tcp" Description="For access to the Jellyfin WebUI (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
   <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/jellyfin" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="true" Mask="false"/>
   <Config Name="Transcode" Target="/transcode" Default="/mnt/user/appdata/transcode" Mode="rw" Description="Path for transcoding folder (Optional)" Type="Path" Display="always" Required="false" Mask="false"/>
