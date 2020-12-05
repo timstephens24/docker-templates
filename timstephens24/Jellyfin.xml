@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>jellyfin</Name>
-  <Repository>linuxserver/jellyfin</Repository>
+  <Repository>timstephens24/jellyfin</Repository>
   <Registry>https://hub.docker.com/r/timstephens24/jellyfin/</Registry>
   <Branch>
   <Tag>latest</Tag>
