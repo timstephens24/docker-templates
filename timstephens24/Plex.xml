@@ -20,7 +20,7 @@
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
   <Repository>timstephens24/plex</Repository>
   <Registry>https://hub.docker.com/r/timstephens24/plex/</Registry>
-  <Icon>https://raw.githubusercontent.com/timstephens24/docker-templates/master/timstephens24/img/plex-icon.png</Icon>
+  <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/plex-icon.png</Icon>
   <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
   <ExtraParams>--runtime=nvidia --device=/dev/dri</ExtraParams>
   <PostArgs/>
