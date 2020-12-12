@@ -23,7 +23,7 @@
   <Network>host</Network>
   <MyIP/>
   <Shell>sh</Shell>
-  <Privileged>true</Privileged>
+  <Privileged>false</Privileged>
   <Beta>False</Beta>
   <Category>MediaServer:Video</Category>
   <Changes></Changes>
