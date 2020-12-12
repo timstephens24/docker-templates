@@ -34,5 +34,6 @@
       </Publish>
   </Networking>
   <Labels/>
+  <Config Name="WebUI" Target="80" Default="8085" Mode="tcp" Description="For access to the WebUI for the M3U and XML" Type="Port" Display="advanced" Required="true" Mask="false"/>
   <Banner></Banner>
 </Container>
