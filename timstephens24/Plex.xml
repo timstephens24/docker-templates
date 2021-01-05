@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container version="2">
   <Name>plex</Name>
-  <Date>2020-11-21</Date>
+  <Date>2020-01-05</Date>
   <Overview>
     Plex organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices.[br][br]
     [span style='color: #E80000;']Host Mappings Explanation[/span][br]
     [b]Port 32400[/b] : This is the default Plex web port (No effect in host mode - reference only).[br]
     [b]/mnt/user/data/Media[/b] : This is where the Media folder exists for Movies, TV Shows, Music, etc. You would then have your libraries pointed here, like /mnt/user/data/media/Movies[br]
     [b]/mnt/user/appdata/plex[/b] : This is where Plex stores all of the files for the library and plugins. This points to /config in the docker container.[br]
-    [b]/mnt/user/appdata/transcode[/b] : This is where Jellyfin will transcode to. This points to /transcode in the docker container.[br][br]
+    [b]/mnt/user/appdata/transcode[/b] : This is where Plex will transcode to. This points to /transcode in the docker container.[br][br]
     [span style='color: #E80000;']Intel GPU Use[/span][br]
     Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot.[br]
     Alternately on the newest Unraid (6.9.0-beta35 or higher) you can run the following two commands:[br]
@@ -18,7 +18,7 @@
     Using the Unraid Nvidia Plugin (or the NVIDIA-Driver plugin on Unraid 6.9.0-beta35 or higher) to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b] (or just us leave it set to 'all').
   </Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
-  <Repository>timstephens24/plex</Repository>
+  <Repository>linuxserver/plex</Repository>
   <Registry>https://hub.docker.com/r/timstephens24/plex/</Registry>
   <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/plex-icon.png</Icon>
   <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
