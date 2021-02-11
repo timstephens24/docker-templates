@@ -15,7 +15,7 @@
   <Repository>timstephens24/channels-dvr</Repository>
   <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
   <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
-  <Icon>https://getchannels.com/assets/img/avatar-120.png</Icon>
+  <Icon>https://getchannels.com/a/images/channels-logo.svg</Icon>
   <WebUI>http://[IP]:[PORT:8089]</WebUI>
   <ExtraParams>--security-opt seccomp=unconfined</ExtraParams>
   <PostArgs/>
