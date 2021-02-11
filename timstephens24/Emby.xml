@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>emby</Name>
   <Repository>linuxserver/emby:beta</Repository>
-  <Registry>https://hub.docker.com/r/timstephens24/emby/</Registry>
+  <Registry>https://hub.docker.com/r/linuxserver/emby/</Registry>
   <Branch>
   <Tag>latest</Tag>
   <TagDescription>Latest stable release of Emby</TagDescription>
