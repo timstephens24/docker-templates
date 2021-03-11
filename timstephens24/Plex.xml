@@ -18,7 +18,7 @@
     Using the Unraid Nvidia Plugin (or the NVIDIA-Driver plugin on Unraid 6.9.0-beta35 or higher) to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b] (or just us leave it set to 'all').
   </Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
-  <Repository>linuxserver/plex</Repository>
+  <Repository>timstephens24/plex</Repository>
   <Registry>https://hub.docker.com/r/timstephens24/plex/</Registry>
   <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/plex-icon.png</Icon>
   <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
