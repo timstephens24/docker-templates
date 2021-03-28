@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container version="2">
   <Name>plex</Name>
-  <Date>2020-01-05</Date>
+  <Date>2021-03-28</Date>
   <Overview>
     Plex organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices.[br][br]
     [span style='color: #E80000;']Host Mappings Explanation[/span][br]
@@ -18,8 +18,8 @@
     Using the Unraid Nvidia Plugin (or the NVIDIA-Driver plugin on Unraid 6.9.0-beta35 or higher) to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b] (or just us leave it set to 'all').
   </Overview>
   <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
-  <Repository>timstephens24/plex</Repository>
-  <Registry>https://hub.docker.com/r/timstephens24/plex/</Registry>
+  <Repository>linuxserver/plex</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/plex/</Registry>
   <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/plex-icon.png</Icon>
   <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
   <ExtraParams>--runtime=nvidia --device=/dev/dri</ExtraParams>
