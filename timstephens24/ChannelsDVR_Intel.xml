@@ -3,14 +3,13 @@
   <Name>channelsdvr_intel</Name>
   <Date>2022-01-16</Date>
   <Overview>
-    The Channels DVR backend engine with Intel HW transcoding support.[br]
-    [b][span style='color: #E80000;']Here is an explanation of the default mappings:[/span][/b]
-    Here is an explanation of the default mappings:
-    [b]Port 8089[/b]: This is the default port that ChannelsDVR listens on. Changing the port is not recommended.
-    [b]/shares/DVR[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /shares/DVR and you enter the location on your server where the data will be. Recommend: /mnt/user/data/Media/ChannelsDVR
-    [b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr
-    [b]--device=/dev/dri[/b]: This is located in [b]"extra parameters"[/b] (switch on advanced view) and passes the iGPU to the container so it can use hardware transcoding.
-    [b]Optional[/b]: Add in a mapping for your personal media, i.e. Host Directory of '/mnt/user/data/Media/Movies' with a Container Directory of '/shares/Movies' and then add that as a Movie Source for Local Content in the server settings.
+The Channels DVR backend engine with Intel HW transcoding support.[br]
+[b][span style='color: #E80000;']Here is an explanation of the default mappings:[/span][/b]
+[b]Port 8089[/b]: This is the default port that ChannelsDVR listens on. Changing the port is not recommended.
+[b]/shares/DVR[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /shares/DVR and you enter the location on your server where the data will be. Recommend: /mnt/user/data/Media/ChannelsDVR
+[b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr
+[b]--device=/dev/dri[/b]: This is located in [b]"extra parameters"[/b] (switch on advanced view) and passes the iGPU to the container so it can use hardware transcoding.
+[b]Optional[/b]: Add in a mapping for your personal media, i.e. Host Directory of '/mnt/user/data/Media/Movies' with a Container Directory of '/shares/Movies' and then add that as a Movie Source for Local Content in the server settings.
   </Overview>
   <Repository>timstephens24/channels-dvr</Repository>
   <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
