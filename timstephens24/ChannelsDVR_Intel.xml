@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container version="2">
-  <Name>channels-dvr</Name>
+  <Name>channelsdvr_intel</Name>
   <Date>2022-01-16</Date>
   <Overview>
-    The Channels DVR backend engine.[br][br]
-    [b][span style='color: #E80000;']Directions:[/span][/b][br]
-    Click the [b]Apply[/b] button at the bottom of the page.[br]
-    Here is an explanation of the default host mappings (change the first one to match your recording location):[br]
-    [b]/mnt/user/data/Media[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /mnt/user/data/Media/ChannelsDVR[br]
-    [b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr[br][br]
-    [b]--device=/dev/dri[/b]: This is located in [b]"extra parameters"[/b] (switch on advanced view) and passes the iGPU to the container so it can use hardware transcoding.[br]
+    The Channels DVR backend engine with Intel HW transcoding support.[br]
+    [b][span style='color: #E80000;']Here is an explanation of the default mappings:[/span][/b]
+    Here is an explanation of the default mappings:
+    [b]Port 8089[/b]: This is the default port that ChannelsDVR listens on. Changing the port is not recommended.
+    [b]/shares/DVR[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /shares/DVR and you enter the location on your server where the data will be. Recommend: /mnt/user/data/Media/ChannelsDVR
+    [b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr
+    [b]--device=/dev/dri[/b]: This is located in [b]"extra parameters"[/b] (switch on advanced view) and passes the iGPU to the container so it can use hardware transcoding.
+    [b]Optional[/b]: Add in a mapping for your personal media, i.e. Host Directory of '/mnt/user/data/Media/Movies' with a Container Directory of '/shares/Movies' and then add that as a Movie Source for Local Content in the server settings.
   </Overview>
   <Repository>timstephens24/channels-dvr</Repository>
   <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
@@ -58,22 +59,22 @@
   </Environment>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/data/Media</HostDir>
-      <ContainerDir>/mnt/user/data/Media</ContainerDir>
+      <HostDir></HostDir>
+      <ContainerDir>/shares/DVR</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/channels-dvr</HostDir>
+      <HostDir></HostDir>
       <ContainerDir>/channels-dvr</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Labels/>
+  <Config Name="DVR" Target="/shares/DVR" Default="" Mode="rw" Description="DVR Folder" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Appdata" Target="/channels-dvr" Default="/mnt/user/appdata/channels-dvr" Mode="rw" Description="Appdata" Type="Path" Dislay="always" Required="true" Mask="false"/>
+  <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
   <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
-  <Config Name="DVR" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="DVR Folder" Type="Path" Display="advanced" Required="true" Mask="false"/>
-  <Config Name="Appdata" Target="/channels-dvr" Default="/mnt/user/appdata/channels-dvr" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
   <Banner/>
 </Container>
