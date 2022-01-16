@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container version="2">
   <Name>channels-dvr</Name>
-  <Date>2020-11-21</Date>
+  <Date>2022-01-16</Date>
   <Overview>
     The Channels DVR backend engine.[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     Click the [b]Apply[/b] button at the bottom of the page.[br]
-    Here is an explanation of the default host mappings:[br]
+    Here is an explanation of the default host mappings (change the first one to match your recording location):[br]
     [b]/mnt/user/data/Media[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /mnt/user/data/Media/ChannelsDVR[br]
     [b]/channels-dvr[/b] : This is where the DVR application and configuration is stored. Recommend having this locally at /mnt/user/appdata/channels-dvr[br][br]
-    If you have an Intel Integrated Graphics card and i915 kernel header enabled, you could add [b]--device=/dev/dri[/b] in [b]"extra parameters"[/b] (switch on advanced view).[br]
-    If you have an NVIDIA card installed with a plugin with the Nvidia Drivers installed, recommend you use the [b]ChannelsDVR_NVIDIA.xml[/b] template. You could add [b]--runtime=nvidia[/b] in [b]"extra parameters"[/b] (switch on advanced view). You would then need to add Environmental Variable for [b]NVIDIA_VISIBLE_DEVICES[/b] and set that to [b]all[/b] as well as the Environmental Variabe for NVIDIA_DRIVER_CAPABILITIES and set that to [b]compute,utility,video[/b]
+    [b]--device=/dev/dri[/b]: This is located in [b]"extra parameters"[/b] (switch on advanced view) and passes the iGPU to the container so it can use hardware transcoding.[br]
   </Overview>
   <Repository>timstephens24/channels-dvr</Repository>
   <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
   <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
   <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/channels-logo.png</Icon>
   <WebUI>http://[IP]:[PORT:8089]</WebUI>
-  <ExtraParams>--security-opt seccomp=unconfined</ExtraParams>
+  <ExtraParams>--device=/dev/dri --security-opt seccomp=unconfined</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <Network>host</Network>
@@ -26,19 +25,19 @@
   <Privileged>false</Privileged>
   <Beta>False</Beta>
   <Category>MediaServer:Video</Category>
-  <Changes></Changes>
+  <Changes/>
   <Support>https://community.getchannels.com</Support>
   <Project>https://getchannels.com/dvr</Project>
   <BindTime>true</BindTime>
   <Networking>
     <Mode>host</Mode>
-      <Publish>
-        <Port>
-          <HostPort>8089</HostPort>
-          <ContainerPort>8089</ContainerPort>
-          <Protocol>tcp</Protocol>
-        </Port>
-      </Publish>
+    <Publish>
+      <Port>
+        <HostPort>8089</HostPort>
+        <ContainerPort>8089</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
   <Environment>
     <Variable>
@@ -71,10 +70,10 @@
   </Data>
   <Labels/>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
-  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
-  <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
   <Config Name="DVR" Target="/mnt/user/data/Media" Default="/mnt/user/data/Media" Mode="rw" Description="DVR Folder" Type="Path" Display="advanced" Required="true" Mask="false"/>
   <Config Name="Appdata" Target="/channels-dvr" Default="/mnt/user/appdata/channels-dvr" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
-  <Banner></Banner>
+  <Banner/>
 </Container>
