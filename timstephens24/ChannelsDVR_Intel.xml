@@ -26,7 +26,7 @@ The Channels DVR backend engine with Intel HW transcoding support.[br]
   <Beta>False</Beta>
   <Category>MediaServer:Video</Category>
   <Changes/>
-  <Support>https://community.getchannels.com</Support>
+  <Support>https://community.getchannels.com/t/unraid-community-app-store/30764</Support>
   <Project>https://getchannels.com/dvr</Project>
   <BindTime>true</BindTime>
   <Networking>
