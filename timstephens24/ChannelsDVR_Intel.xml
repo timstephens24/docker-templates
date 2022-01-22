@@ -3,7 +3,9 @@
   <Name>channelsdvr_intel</Name>
   <Date>2022-01-16</Date>
   <Overview>
-The Channels DVR backend engine with Intel HW transcoding support.[br]
+The Channels DVR backend engine with Intel HW transcoding support.
+[b]If you need to enable HW transcoding, the easiest way is to install the 'Intel GPU TOP' plugin by ich777.[/b]
+[b]If you don't need or want the HW transoding, when you are creating the docker container enable Advanced View by the toggle in the top right corner (it'll say Basic View until you toggle it) then remove '--device=/dev/dri' in the Extra Parameters section.[/b][br]
 [b][span style='color: #E80000;']Here is an explanation of the default mappings:[/span][/b]
 [b]Port 8089[/b]: This is the default port that ChannelsDVR listens on. Changing the port is not recommended.
 [b]/shares/DVR[/b] : This is where the ChannelsDVR folder exists for recordings to be stored. The DVR folder in the Channels Settings would then be: /shares/DVR and you enter the location on your server where the data will be. Recommend: /mnt/user/data/Media/ChannelsDVR
