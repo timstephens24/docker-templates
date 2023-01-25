@@ -11,7 +11,7 @@ The Channels DVR backend engine with NVIDIA HW transcoding.[br]
 [b]--runtime=nvidia[/b]: This is in [b]"extra parameters"[/b] (switch on advanced view) and allows passing through the NVIDIA graphics card to the container. Environmental Variables for [b]NVIDIA_VISIBLE_DEVICES[/b] and [b]NVIDIA_DRIVER_CAPABILITIES[/b] are already in the template, but you can change the 'all' variable for the device to match the UUID of a specific device if you have more than one.
 [b]Optional[/b]: Add in a mapping for your personal media, i.e. Host Directory of '/mnt/user/data/Media/Movies' with a Container Directory of '/shares/Movies' and then add that as a Movie Source for Local Content in the server settings.
   </Overview>
-  <Repository>timstephens24/channels-dvr</Repository>
+  <Repository>timstephens24/channels-dvr:latest</Repository>
   <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
   <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
   <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/channels-logo.png</Icon>
