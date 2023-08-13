@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container version="2">
   <Name>channelsdvr_intel</Name>
-  <Date>2022-01-16</Date>
+  <Date>2023-08-13</Date>
   <Overview>
 The Channels DVR backend engine with Intel HW transcoding support.
 [b]If you need to enable HW transcoding, the easiest way is to install the 'Intel GPU TOP' plugin by ich777.[/b]
@@ -13,12 +13,11 @@ The Channels DVR backend engine with Intel HW transcoding support.
 [b]--device=/dev/dri[/b]: This is located in [b]"extra parameters"[/b] (switch on advanced view) and passes the iGPU to the container so it can use hardware transcoding.
 [b]Optional[/b]: Add in a mapping for your personal media, i.e. Host Directory of '/mnt/user/data/Media/Movies' with a Container Directory of '/shares/Movies' and then add that as a Movie Source for Local Content in the server settings.
   </Overview>
-  <Repository>timstephens24/channels-dvr:latest</Repository>
-  <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
-  <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
+  <Repository>fancybits/channels-dvr:tve</Repository>
+  <Registry>https://registry.hub.docker.com/r/fancybits/channels-dvr</Registry>
   <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/channels-logo.png</Icon>
   <WebUI>http://[IP]:[PORT:8089]</WebUI>
-  <ExtraParams>--device=/dev/dri --security-opt seccomp=unconfined</ExtraParams>
+  <ExtraParams>--device=/dev/dri</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <Network>host</Network>
@@ -60,18 +59,18 @@ The Channels DVR backend engine with Intel HW transcoding support.
   </Environment>
   <Data>
     <Volume>
-      <HostDir></HostDir>
+      <HostDir>/mnt/user/data/Media/ChannelsDVR</HostDir>
       <ContainerDir>/shares/DVR</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir></HostDir>
+      <HostDir>/mnt/user/appdata/channels-dvr</HostDir>
       <ContainerDir>/channels-dvr</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Labels/>
-  <Config Name="DVR" Target="/shares/DVR" Default="" Mode="rw" Description="DVR Folder" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="DVR" Target="/shares/DVR" Default="/mnt/user/data/Media/ChannelsDVR" Mode="rw" Description="DVR Folder" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Appdata" Target="/channels-dvr" Default="/mnt/user/appdata/channels-dvr" Mode="rw" Description="Appdata" Type="Path" Dislay="always" Required="true" Mask="false"/>
   <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>

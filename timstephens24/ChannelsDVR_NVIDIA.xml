@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container version="2">
   <Name>channelsdvr_nvidia</Name>
-  <Date>2022-01-16</Date>
+  <Date>2023-08-13</Date>
   <Overview>
 The Channels DVR backend engine with NVIDIA HW transcoding.[br]
 [b][span style='color: #E80000;']Here is an explanation of the default mappings:[/span][/b]
@@ -11,12 +11,11 @@ The Channels DVR backend engine with NVIDIA HW transcoding.[br]
 [b]--runtime=nvidia[/b]: This is in [b]"extra parameters"[/b] (switch on advanced view) and allows passing through the NVIDIA graphics card to the container. Environmental Variables for [b]NVIDIA_VISIBLE_DEVICES[/b] and [b]NVIDIA_DRIVER_CAPABILITIES[/b] are already in the template, but you can change the 'all' variable for the device to match the UUID of a specific device if you have more than one.
 [b]Optional[/b]: Add in a mapping for your personal media, i.e. Host Directory of '/mnt/user/data/Media/Movies' with a Container Directory of '/shares/Movies' and then add that as a Movie Source for Local Content in the server settings.
   </Overview>
-  <Repository>timstephens24/channels-dvr:latest</Repository>
-  <GitHub>https://github.com/timstephens24/channels-dvr_docker</GitHub>
-  <Registry>https://registry.hub.docker.com/r/timstephens24/channels-dvr</Registry>
+  <Repository>fancybits/channels-dvr:nvidia</Repository>
+  <Registry>https://registry.hub.docker.com/r/fancybits/channels-dvr</Registry>
   <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/channels-logo.png</Icon>
   <WebUI>http://[IP]:[PORT:8089]</WebUI>
-  <ExtraParams>--runtime=nvidia --security-opt seccomp=unconfined</ExtraParams>
+  <ExtraParams>--runtime=nvidia</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <Network>host</Network>
@@ -79,11 +78,11 @@ The Channels DVR backend engine with NVIDIA HW transcoding.[br]
     </Volume>
   </Data>
   <Labels/>
-  <Config Name="DVR" Target="/shares/DVR" Default="" Mode="rw" Description="DVR Folder" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="DVR" Target="/shares/DVR" Default="/mnt/user/data/Media/ChannelsDVR" Mode="rw" Description="DVR Folder" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Appdata" Target="/channels-dvr" Default="/mnt/user/appdata/channels-dvr" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
   <Config Name="NVIDIA_DRIVER_CAPABILITIES" Target="NVIDIA_DRIVER_CAPABILITIES" Default="compute,utility,video" Mode="" Description="Container Variable: NVIDIA_DRIVER_CAPABILITIES" Type="Variable" Display="advanced" Required="true" Mask="false">compute,utility,video</Config>
-  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="NVIDIA_VISIBLE_DEVICES" Mode="" Description="Container Variable: NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="advanced" Required="true" Mask="false">all</Config>
+  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Container Variable: NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="advanced" Required="true" Mask="false">all</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
   <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
