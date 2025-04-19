@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>ADBTuner</Name>
+  <Date>2025-04-19</Date>
+  <Overview>
+ADBTuner is a small, containerized, web-based application that can load deep linked content on networked Android TV devices via ADB (Android Debug Bridge).
+
+ADBTuner is fully configurable via a web interface interface with support for multiple "tuner" devices and easily managed "channels."
+  </Overview>
+  <Repository>turtletank99/adbtuner</Repository>
+  <Registry>https://hub.docker.com/r/turtletank99/adbtuner</Registry>
+  <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/channels-logo.png</Icon>
+  <WebUI>http://[IP]:[PORT:5592]</WebUI>
+  <ExtraParams></ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Beta>False</Beta>
+  <Category>MediaServer:Video</Category>
+  <Changes/>
+  <Support>https://community.getchannels.com/t/unraid-community-app-store/30764</Support>
+  <Project>https://community.getchannels.com/t/adbtuner-a-channel-tuning-application-for-networked-google-tv-android-tv-devices</Project>
+  <BindTime>true</BindTime>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5592</HostPort>
+        <ContainerPort>5592</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>America/New_York</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/adbtuner</HostDir>
+      <ContainerDir>/app/.config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Labels/>
+  <Config Name="Appdata" Target="/app/.config" Default="/mnt/user/appdata/adbtuner" Mode="rw" Description="Appdata" Type="Path" Dislay="always" Required="true" Mask="false"/>
+  <Config Name="WebUI" Target="5592" Default="5592" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">5592</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
+  <Banner/>
+</Container>
