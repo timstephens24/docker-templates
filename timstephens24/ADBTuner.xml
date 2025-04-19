@@ -9,7 +9,7 @@ ADBTuner is fully configurable via a web interface interface with support for mu
   </Overview>
   <Repository>turtletank99/adbtuner</Repository>
   <Registry>https://hub.docker.com/r/turtletank99/adbtuner</Registry>
-  <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/channels-logo.png</Icon>
+  <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/adb-logo.png</Icon>
   <WebUI>http://[IP]:[PORT:5592]</WebUI>
   <ExtraParams></ExtraParams>
   <PostArgs/>
