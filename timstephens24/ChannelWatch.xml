@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>ChannelWatch</Name>
+  <Date>2025-05-04</Date>
+  <Overview>
+ChannelWatch provides real-time monitoring with detailed notifications for:
+- Live TV viewing with channel and program details
+- VOD/recorded content playback tracking with metadata and progress
+- Complete recording lifecycle tracking (scheduled, started, completed, cancelled, stopped)
+- Disk space monitoring with customizable thresholds and visual dashboard
+- Multi-device awareness and session tracking across all clients
+- Modern web dashboard for configuration and system status monitoring
+- Real-time status overview with active streams and upcoming recordings
+- Built-in diagnostic tools accessible directly from the web UI
+  </Overview>
+  <Repository>coderluii/channelwatch:latest</Repository>
+  <Registry>https://docker.macin.org/r/coderluii/channelwatch</Registry>
+  <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/adb-logo.png</Icon>
+  <WebUI>http://[IP]:[PORT:8501]</WebUI>
+  <ExtraParams></ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Beta>False</Beta>
+  <Category>MediaServer:Video</Category>
+  <Changes/>
+  <Support>https://community.getchannels.com/t/unraid-community-app-store/30764</Support>
+  <Project>https://github.com/CoderLuii/ChannelWatch</Project>
+  <BindTime>true</BindTime>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8501</HostPort>
+        <ContainerPort>8501</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>America/New_York</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/channelwatch</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Labels/>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/channelwatch" Mode="rw" Description="Appdata" Type="Path" Dislay="always" Required="true" Mask="false"/>
+  <Config Name="WebUI" Target="8501" Default="8501" Mode="tcp" Description="Admin Port" Type="Port" Display="always" Required="false" Mask="false">8501</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">America/New_York</Config>
+  <Banner/>
+</Container>
