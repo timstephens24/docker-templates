@@ -15,7 +15,7 @@ ChannelWatch provides real-time monitoring with detailed notifications for:
   </Overview>
   <Repository>coderluii/channelwatch:latest</Repository>
   <Registry>https://docker.macin.org/r/coderluii/channelwatch</Registry>
-  <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/adb-logo.png</Icon>
+  <Icon>https://github.com/timstephens24/docker-templates/raw/master/img/channelwatch.png</Icon>
   <WebUI>http://[IP]:[PORT:8501]</WebUI>
   <ExtraParams></ExtraParams>
   <PostArgs/>
